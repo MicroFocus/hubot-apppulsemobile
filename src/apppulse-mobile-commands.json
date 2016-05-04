@@ -1,0 +1,17 @@
+{
+  "Browse applications": {
+    "Description": "Browse registered apps on tenant",
+    "Syntax": "apppulse get apps",
+    "Examples":"apppulse get apps"
+  },
+  "Show application fundex": {
+    "Description": "Show fundex for specified application and platform",
+    "Syntax": "apppulse get fundex for [application] [platform]",
+    "Examples":"apppulse get fundex for Advantage Mobile Banking Anroid"
+  },
+  "Show stability errors of application": {
+    "Description": "Show top 5 stability errors for specified application and platform",
+    "Syntax": "apppulse get stability errors for [application] [platform]",
+    "Examples":"apppulse get stability errors for Advantage Mobile Banking Anroid"
+  }
+}
