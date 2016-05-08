@@ -15,7 +15,7 @@ module.exports = (robot) ->
     #room   = req.params.room
     room = robot.brain.get "shareRoom"
     if not room
-      room = process.env.SAAS_PREFIX;
+      room = process.env.DEFAULT_SHARE_ROOM;
 
     robot.logger.info "Share room defined to be : #{room}"
 
