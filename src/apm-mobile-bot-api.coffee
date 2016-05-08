@@ -12,7 +12,12 @@ module.exports = (robot) ->
 ######################################################################################
   robot.router.post '/hubot/apppulsemobile/:room', (req, res) ->
     robot.logger.info "entered listener"
-    room   = req.params.room
+    #room   = req.params.room
+    room = robot.brain.get "shareRoom"
+    if not room
+      room = process.env.SAAS_PREFIX;
+
+    robot.logger.info "Share room defined to be : #{room}"
 
     data   = req.body
 
@@ -61,7 +66,7 @@ module.exports = (robot) ->
     if apppulseShareObj.errorsMessages.length>0
       errorMessage=apppulseShareObj.errorsMessages[0].message
     msgData = {
-      channel: "apppulse"
+      channel: room
       text:"*Failure time*: #{apppulseShareObj.crashTime}\n
             *Action*: #{apppulseShareObj.action} on #{apppulseShareObj.screen}\n
             *Error messsage*: #{errorMessage}\n
