@@ -45,7 +45,7 @@ Hubot should be run with the following env variables to support this script:
 
 	apppulse get errors for [app name]
 
-#### Dislpay apppulse help:
+##### Dislpay apppulse help:
 
 	apppulse help
 
