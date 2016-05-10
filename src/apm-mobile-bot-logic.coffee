@@ -3,6 +3,7 @@ AppPulseApi = require "./libs/appPulseMobileApiAdapter.js"
 
 module.exports = (robot) ->
   robot.respond /apppulse get apps/i, (msg) ->
+    Helpers.setSharingRoom(robot,msg)
     robot.http("http://localhost:8080/hubot/apppulsemobile/proxy/getApps")
       .get() (err, res, body) ->
         if err or res.statusCode!=200
@@ -47,6 +48,7 @@ module.exports = (robot) ->
         robot.emit 'slack.attachment', msgData
 ######################################################################################
   robot.respond /apppulse get fundex for (.*)/i, (msg)->
+    Helpers.setSharingRoom(robot,msg)
     applicationName = msg.match[1]
     robot.logger.debug "Showing fundex for application #{applicationName}"
 
@@ -102,6 +104,7 @@ module.exports = (robot) ->
         robot.emit 'slack.attachment', msgData
 ######################################################################################
   robot.respond /apppulse get errors for (.*)/i, (msg)->
+    Helpers.setSharingRoom(robot,msg)
     application = msg.match[1]
 
     robot.logger.debug "apppulse get stability errors for app=#{application}"

@@ -129,3 +129,8 @@ module.exports =
       result.push(container)
 
     return result
+
+  setSharingRoom:(robot,msg)->
+    shareRoom = msg.message.room
+    robot.logger.debug "Sharing room set to #{shareRoom}"
+    robot.brain.set "shareRoom",shareRoom
