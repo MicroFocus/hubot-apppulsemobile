@@ -9,16 +9,22 @@ var authDetails=undefined;
 var saasPrefix = process.env.SAAS_PREFIX;
 var saasUrl = process.env.SAAS_URL;
 function makeAuth() {
-  if(authDetails!=undefined)
-    return;
-
   var currTime = new Date().getTime();
   if(authDetails!=undefined){
-    if(currTime < authDetails.expirationTime){
+    var delta = authDetails.expirationTime - currTime;
+
+    console.log(util.format("Auth details : Current time: %s , expiration time: %s delta : %s",
+      currTime,authDetails.expirationTime,delta));
+
+    if(delta> 0){
+      console.log("Current time is less than expiration time - no auth required");
       return;
     }
+
+    console.log("Current time is larger than expiration time - auth required!");
   }
 
+  console.log("Making authentication!");
   var req = request('POST', util.format('%s/v1/%s/oauth/token',saasPrefix,tenantId), {
     json:{
       clientSecret: process.env.CLIENT_SECRET,
@@ -27,6 +33,7 @@ function makeAuth() {
   });
 
   authDetails = JSON.parse(req.getBody('utf8'));
+  console.log("Authentication passed!");
 }
 
 function executeOpenApi(url){
