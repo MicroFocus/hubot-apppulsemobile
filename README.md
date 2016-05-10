@@ -46,3 +46,9 @@ dislpay apppulse help
 enable/disable mock data for the following commands:
 get fundex
 get errors
+```apppulse set days to substruct [num of days]```
+set number of days to substrcut from current days for getting the data from open api
+```apppulse get days to substruct [num of days]```
+get number of days to substrcut from current days for getting the data from open api
+
+
