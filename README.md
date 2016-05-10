@@ -33,37 +33,41 @@ Hubot should be run with the following env variables to support this script:
 
 ## Availble commands:
 
+##### Get list of availble apps for tenant:
+
 	apppulse get apps
 
-Get list of availble apps for tenant
+##### Get fundex for specified application (will bring both data for iOS and Android):
 
 	apppulse get fundex for [app name]
 
-Get fundex for specified application (will bring both data for iOS and Android)
+##### Get list of top errors for specified application (will bring both data for iOS and Android):
 
 	apppulse get errors for [app name]
 
-Get list of top errors for specified application (will bring both data for iOS and Android)
+#### Dislpay apppulse help:
 
 	apppulse help
 
-dislpay apppulse help
-
-	apppulse set mock data [enabled\disabled]
-
-enable/disable mock data for the following commands:
+##### Enable/Disable mock data for the following commands:
 
 * get fundex
 
 * get errors
 
 
-	apppulse set days to substruct [num of days]
+	apppulse set mock data [enabled\disabled]
+    
+##### Get mock data status:
+    apppulse mock data status
+##### Set number of days to substrcut from current days for getting the data from open api:
 
-set number of days to substrcut from current days for getting the data from open api
+	apppulse set days to substruct [num of days]
+    
+##### Get number of days to substrcut from current days for getting the data from open api:
 
 	apppulse get days to substruct [num of days]
 
-get number of days to substrcut from current days for getting the data from open api
+
 
 
