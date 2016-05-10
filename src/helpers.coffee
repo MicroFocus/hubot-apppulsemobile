@@ -1,7 +1,14 @@
 AppPulseApi = require "./libs/appPulseMobileApiAdapter.js"
 mockData = require "./mockData"
+globalRobot = null
 
 module.exports =
+  setRobot:(robot)->
+    robot.logger.debug "robot set!"
+    globalRobot = robot
+  getRobot:()->
+    return globalRobot
+
   getAppId:(apps,appName) ->
     for index,value of apps
       if value.applicationName is appName

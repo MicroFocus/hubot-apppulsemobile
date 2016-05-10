@@ -2,6 +2,8 @@ Helpers = require './helpers'
 AppPulseApi = require "./libs/appPulseMobileApiAdapter.js"
 
 module.exports = (robot) ->
+  Helpers.setRobot(robot)
+
   robot.respond /apppulse get apps/i, (msg) ->
     Helpers.setSharingRoom(robot,msg)
     robot.http("http://localhost:8080/hubot/apppulsemobile/proxy/getApps")
@@ -204,3 +206,12 @@ module.exports = (robot) ->
   robot.respond /apppulse get share room/i, (msg) ->
     shareRoom= robot.brain.get "shareRoom"
     msg.reply "Share room is #{shareRoom}"
+
+  robot.respond /apppulse set days to substruct (.*)/i, (msg) ->
+    days= msg.match[1]
+    AppPulseApi.setDaysToSubstract(days)
+    msg.reply "Days to subtracting set to #{days}"
+
+  robot.respond /apppulse get days to substruct (.*)/i, (msg) ->
+    days = AppPulseApi.getDaysToSubstract()
+    msg.reply "Current subtracting #{days} days"

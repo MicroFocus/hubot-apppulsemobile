@@ -8,6 +8,7 @@ var tenantId=process.env.TENANT_ID;
 var authDetails=undefined;
 var saasPrefix = process.env.SAAS_PREFIX;
 var saasUrl = process.env.SAAS_URL;
+
 function makeAuth() {
   var currTime = new Date().getTime();
   if(authDetails!=undefined){
@@ -72,6 +73,14 @@ function formatDate(date){
 }
 
 module.exports = {
+  setDaysToSubstract:function(days){
+    daysToSubtract = days;
+  },
+  getDaysToSubstract:function(){
+    return daysToSubtract
+  },
+
+
   getSaaSUrl:function () {
     return saasUrl;
   },
