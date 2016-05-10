@@ -3,7 +3,7 @@
  */
 var request = require('sync-request');
 var util = require('util');
-var daysToSubtract = 5;
+var daysToSubtract = 2;
 var tenantId=process.env.TENANT_ID;
 var authDetails=undefined;
 var saasPrefix = process.env.SAAS_PREFIX;
