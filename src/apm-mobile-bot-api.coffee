@@ -32,35 +32,36 @@ module.exports = (robot) ->
     apppulseShareObj = data
 
     attachments = []
-    for netErr in apppulseShareObj.errorsNetwork
-      traceRef = Helpers.generateUniqueTraceReference()
-      traceDrillUrl = ""
+    if apppulseShareObj.errorsNetwork!=undefined 
+      for netErr in apppulseShareObj.errorsNetwork
+        traceRef = Helpers.generateUniqueTraceReference()
+        traceDrillUrl = ""
 
-      if netErr.traceDrillUrl!=null
-        traceDrillUrl = netErr.traceDrillUrl
-        mobileTraceDrillMap[traceRef]=traceDrillUrl
-        robot.brain.set 'mobileTraceDrillMap',mobileTraceDrillMap
+        if netErr.traceDrillUrl!=null
+          traceDrillUrl = netErr.traceDrillUrl
+          mobileTraceDrillMap[traceRef]=traceDrillUrl
+          robot.brain.set 'mobileTraceDrillMap',mobileTraceDrillMap
 
-      robot.logger.debug "netError json : #{JSON.stringify(netErr)}"
-      robot.logger.debug "netError url: #{netErr.url}"
-      url = netErr.url.replace("http://","")
+        robot.logger.debug "netError json : #{JSON.stringify(netErr)}"
+        robot.logger.debug "netError url: #{netErr.url}"
+        url = netErr.url.replace("http://","")
 
-      attachment = {
-        mrkdwn_in: ["pretext", "text", "fields"]
-        color: "#F35A00"
-        fields:[
-          {
-            value: "*Error response code* : #{netErr.errorCode} | *Request*://#{url}"
-          }
-        ]
-      }
-      if traceDrillUrl!=""
-        attachment.fields.push(
-          {
-            value: "<#{traceDrillUrl}|Investigate server error> (Transaction uid: #{traceRef})"
-          }
-        )
-      attachments.push attachment
+        attachment = {
+          mrkdwn_in: ["pretext", "text", "fields"]
+          color: "#F35A00"
+          fields:[
+            {
+              value: "*Error response code* : #{netErr.errorCode} | *Request*://#{url}"
+            }
+          ]
+        }
+        if traceDrillUrl!=""
+          attachment.fields.push(
+            {
+              value: "<#{traceDrillUrl}|Investigate server error> (Transaction uid: #{traceRef})"
+            }
+          )
+        attachments.push attachment
 
     errorMessage=""
     if apppulseShareObj.errorsMessages.length>0
