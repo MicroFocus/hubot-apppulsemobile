@@ -32,7 +32,7 @@ module.exports = (robot) ->
     apppulseShareObj = data
 
     attachments = []
-    if apppulseShareObj.errorsNetwork!=undefined 
+    if apppulseShareObj.errorsNetwork!=undefined
       for netErr in apppulseShareObj.errorsNetwork
         traceRef = Helpers.generateUniqueTraceReference()
         traceDrillUrl = ""
@@ -64,8 +64,9 @@ module.exports = (robot) ->
         attachments.push attachment
 
     errorMessage=""
-    if apppulseShareObj.errorsMessages.length>0
-      errorMessage=apppulseShareObj.errorsMessages[0].message
+    if(apppulseShareObj.errorMessages != undefined )
+      if apppulseShareObj.errorsMessages.length>0
+        errorMessage=apppulseShareObj.errorsMessages[0].message
     msgData = {
       channel: room
       text:"*Failure time*: #{apppulseShareObj.crashTime}\n
