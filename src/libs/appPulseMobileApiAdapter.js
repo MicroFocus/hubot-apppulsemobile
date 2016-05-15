@@ -73,6 +73,7 @@ function formatDate(date){
 }
 
 module.exports = {
+  
   setDaysToSubstract:function(days){
     daysToSubtract = days;
   },
@@ -88,6 +89,7 @@ module.exports = {
   getTenantId : function(){
     return tenantId;
   },
+
   getApps: function() {
     makeAuth();
 
@@ -123,6 +125,7 @@ module.exports = {
   },
 
   getTopUAWithErrors:function(appId){
+    makeAuth();
     var from_day = new Date();
     from_day.setDate(new Date().getDate() - daysToSubtract);
 
@@ -142,6 +145,7 @@ module.exports = {
   },
 
  getTopUAWithCrashes:function(appId){
+    makeAuth();
     var from_day = new Date();
     from_day.setDate(new Date().getDate() - daysToSubtract);
 
@@ -155,6 +159,7 @@ module.exports = {
     return JSON.parse(resJson);
   },
   getTopUAWithPerformance:function(appId){
+    makeAuth();
     var from_day = new Date();
     from_day.setDate(new Date().getDate() - daysToSubtract);
 
