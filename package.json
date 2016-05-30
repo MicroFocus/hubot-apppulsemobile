@@ -16,8 +16,7 @@
     "url": "https://github.com/hubot-scripts/hubot-apppulsemobile/issues"
   },
 
-  "dependencies": {
-   "proxy-agent": "^2.0.0",
+  "dependencies": {   
    "sync-request": "^3.0.0",
    "querystring":"^0.2.0"
   },
