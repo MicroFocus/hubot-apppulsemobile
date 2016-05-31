@@ -1,6 +1,6 @@
 {
   "name": "hubot-apppulsemobile",
-  "description": "A hubot script that does the things",
+  "description": "Hubot script for operating AppPulse Mobile chatops bot",
   "version": "0.1.0",
   "author": "Michael Seldin <michael.seldin@hpe.com>",
   "license": "MIT",
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-apppulsemobile.git"
+    "url": "git://github.hpe.com/ChatOps/hubot-apppulsemobile.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-apppulsemobile/issues"
+    "url": "https://github.hpe.com/ChatOps/hubot-apppulsemobile/issues"
   },
 
   "dependencies": {
