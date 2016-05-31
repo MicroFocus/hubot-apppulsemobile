@@ -15,6 +15,26 @@ See the License for the specific language governing permissions and limitations 
 
 
 root = exports ? this
+root.appsMockData={
+  "metaData": {
+    "message": "Success",
+    "messageCode": 2000
+  },
+  "data": {
+    "applications": [      
+      {
+        "applicationId": "8e9d889a88ce42b7ad414427efd3ffc3",
+        "applicationName": "Advantage Mobile Banking",
+        "platformType": "Android",
+        "packageName": "com.hpswdemo.advantageinc",
+        "launchTimeThresholdSec": 4,
+        "actionResponseTimeThresholdSec": 2,
+        "batteryUsageThresholdPercentPerMinute": 0.5,
+        "cellularDataUsageThresholdKilobytePerMinute": 300
+      }      
+    ]
+  }
+}
 
 root.fundexMockData = {
   "metaData": {

@@ -10,7 +10,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing,
 Software distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and limitations under the License. 
+See the License for the specific language governing permissions and limitations under the License.
 ###
 
 
@@ -33,11 +33,16 @@ module.exports =
 
 #############################################################################
   getApplications:(robot,refresh=false) ->
+    useMockData = robot.brain.get 'isMockData'
 
     apps = robot.brain.get 'apps'
     if apps is null or refresh
       robot.logger.debug "Getting apps from server..."
-      apps = AppPulseApi.getApps()
+      if useMockData
+        apps =  mockData.appsMockData.data.applications
+      else
+        apps = AppPulseApi.getApps()
+
       robot.brain.set("apps",apps)
 
     return apps
