@@ -1,7 +1,7 @@
 {
   "name": "hubot-apppulsemobile",
   "description": "A hubot script that does the things",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Michael Seldin <michael.seldin@hpe.com>",
   "license": "MIT",
 
@@ -16,7 +16,7 @@
     "url": "https://github.com/hubot-scripts/hubot-apppulsemobile/issues"
   },
 
-  "dependencies": {   
+  "dependencies": {
    "sync-request": "^3.0.0",
    "querystring":"^0.2.0"
   },
