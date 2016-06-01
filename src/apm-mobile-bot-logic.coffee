@@ -10,12 +10,13 @@ http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing,
 Software distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and limitations under the License. 
+See the License for the specific language governing permissions and limitations under the License.
 ###
 
 
 Helpers = require './helpers'
 AppPulseApi = require "./libs/appPulseMobileApiAdapter.js"
+mockData = require "./mockData"
 
 module.exports = (robot) ->
   Helpers.setRobot(robot)
@@ -231,3 +232,10 @@ module.exports = (robot) ->
   robot.respond /apppulse get days to substruct (.*)/i, (msg) ->
     days = AppPulseApi.getDaysToSubstract()
     msg.reply "Current subtracting #{days} days"
+######################################################################################
+  robot.respond /apppulse share to room/i, (msg) ->
+    data = JSON.stringify(mockData.shareDataMock)
+    robot.http("http://localhost:8080/hubot/apppulsemobile/botchannel")
+    .header('Content-Type', 'application/json')
+    .post(data)
+
