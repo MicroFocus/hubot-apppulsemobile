@@ -72,7 +72,7 @@ root.userActionsResposeMockData = {
         "dailyAvgAffectedUsers": 794,
         "failedActionHitsPercent": 27.43,
         "appVersions": "3.2,3.3,3.5,3.6"
-        "appPulseUrl":"http://myd-vm21820.hpswlabs.adapps.hp.com/apmappsServer/index.html?TENANTID=444554562#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=4361e5bf72f343be8f340ba20017774d&appVersion=ALL"
+        "appPulseUrl":"http://chatopsmobile.hpadvantageinc.com/apmappsServer/index.html?TENANTID=881234098#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=52c96b0b71404ffd9f0cd964f36cc469&appVersion=ALL"
       },
       {
         "actionId": "81088876309325053",
@@ -83,7 +83,7 @@ root.userActionsResposeMockData = {
         "dailyAvgAffectedUsers": 342.22,
         "failedActionHitsPercent": 11.2,
         "appVersions": "3.2,3.3,3.4,3.5,3.6"
-        "appPulseUrl":"http://myd-vm21820.hpswlabs.adapps.hp.com/apmappsServer/index.html?TENANTID=444554562#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=4361e5bf72f343be8f340ba20017774d&appVersion=ALL"
+        "appPulseUrl":"http://chatopsmobile.hpadvantageinc.com/apmappsServer/index.html?TENANTID=881234098#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=52c96b0b71404ffd9f0cd964f36cc469&appVersion=ALL"
       },
       {
         "actionId": "145473219096908992",
@@ -94,7 +94,7 @@ root.userActionsResposeMockData = {
         "dailyAvgAffectedUsers": 131.94,
         "failedActionHitsPercent": 4.02,
         "appVersions": "3.2,3.3,3.5"
-        "appPulseUrl":"http://myd-vm21820.hpswlabs.adapps.hp.com/apmappsServer/index.html?TENANTID=444554562#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=4361e5bf72f343be8f340ba20017774d&appVersion=ALL"
+        "appPulseUrl":"http://chatopsmobile.hpadvantageinc.com/apmappsServer/index.html?TENANTID=881234098#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=52c96b0b71404ffd9f0cd964f36cc469&appVersion=ALL"
       },
       {
         "actionId": "701466228373455393",
@@ -105,7 +105,7 @@ root.userActionsResposeMockData = {
         "dailyAvgAffectedUsers": 79.44,
         "failedActionHitsPercent": 3.29,
         "appVersions": "3.3,3.5"
-        "appPulseUrl":"http://myd-vm21820.hpswlabs.adapps.hp.com/apmappsServer/index.html?TENANTID=444554562#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=4361e5bf72f343be8f340ba20017774d&appVersion=ALL"
+        "appPulseUrl":"http://chatopsmobile.hpadvantageinc.com/apmappsServer/index.html?TENANTID=881234098#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=52c96b0b71404ffd9f0cd964f36cc469&appVersion=ALL"
       },
       {
         "actionId": "419278562619777047",
@@ -116,7 +116,7 @@ root.userActionsResposeMockData = {
         "dailyAvgAffectedUsers": 52.39,
         "failedActionHitsPercent": 2,
         "appVersions": "3.2,3.5"
-        "appPulseUrl":"http://myd-vm21820.hpswlabs.adapps.hp.com/apmappsServer/index.html?TENANTID=444554562#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=4361e5bf72f343be8f340ba20017774d&appVersion=ALL"
+        "appPulseUrl":"http://chatopsmobile.hpadvantageinc.com/apmappsServer/index.html?TENANTID=881234098#/reports/stability/errorsOnAction?actionIds=337329516271221995&applicationId=52c96b0b71404ffd9f0cd964f36cc469&appVersion=ALL"
       }
     ]
   }
