@@ -235,7 +235,7 @@ module.exports = (robot) ->
 ######################################################################################
   robot.respond /apppulse get error instance/i, (msg) ->
     Helpers.setSharingRoom(robot,msg)
-    Helpers.shareToRoom
+    Helpers.shareToRoom(robot)
 ######################################################################################
   robot.respond /apppulse share to room/i, (msg) ->
-    Helpers.shareToRoom
+    Helpers.shareToRoom(robot)
