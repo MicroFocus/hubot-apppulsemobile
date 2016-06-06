@@ -233,9 +233,9 @@ module.exports = (robot) ->
     days = AppPulseApi.getDaysToSubstract()
     msg.reply "Current subtracting #{days} days"
 ######################################################################################
+  robot.respond /apppulse get error instance/i, (msg) ->
+    Helpers.setSharingRoom(robot,msg)
+    Helpers.shareToRoom
+######################################################################################
   robot.respond /apppulse share to room/i, (msg) ->
-    data = JSON.stringify(mockData.shareDataMock)
-    robot.http("http://localhost:8080/hubot/apppulsemobile/botchannel")
-    .header('Content-Type', 'application/json')
-    .post(data)
-
+    Helpers.shareToRoom

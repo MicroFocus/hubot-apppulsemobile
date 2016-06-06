@@ -162,3 +162,20 @@ module.exports =
     shareRoom = msg.message.room
     robot.logger.debug "Sharing room set to #{shareRoom}"
     robot.brain.set "shareRoom",shareRoom
+
+  shareToRoom:(robot)->
+    date = new Date();
+    
+    timeStamp = [date.getFullYear(), (date.getMonth() + 1), date.getDate()].join("-") + " " + [date.getHours()-1, date.getMinutes(), date.getSeconds()].join(":")
+    RE_findSingleDigits = /\b(\d)\b/g
+    
+    # Places a `0` in front of single digit numbers.
+    timeStamp = timeStamp.replace( RE_findSingleDigits, "0$1")
+    timeStamp.replace /\s/g, ""
+    
+    dataStr =mockData.shareDataMock.replace("_CRASH_TIME_",timeStamp)
+    
+    data = JSON.stringify(mockData.shareDataMock)
+    robot.http("http://localhost:8080/hubot/apppulsemobile/botchannel")
+      .header('Content-Type', 'application/json')
+      .post(data)    

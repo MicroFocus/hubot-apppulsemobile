@@ -125,7 +125,7 @@ root.userActionsResposeMockData = {
 root.shareDataMock = {
   "screen": "Money Transfer",
   "action": "Tap the Transfer button",
-  "crashTime": "2016-05-21 18:15:00",
+  "crashTime": "_CRASH_TIME_",
   "autoLink": "http://localhost:3000/index.dev.html?TENANTID=123456#/reports/stability/err…02&applicationId=407aa4ce05f58da322c6e1e2f883d111&appVersion=ALL&mock=test",
   "overviewData": [
     {
