@@ -64,7 +64,8 @@ module.exports = (robot) ->
 
         console.log JSON.stringify(msgData)
 
-        robot.emit 'slack.attachment', msgData
+        #robot.emit 'slack.attachment', msgData
+        Helpers.sendCustomMessage(robot,msgData)
 ######################################################################################
   robot.respond /apppulse get fundex for (.*)/i, (msg)->
     Helpers.setSharingRoom(robot,msg)
@@ -120,7 +121,9 @@ module.exports = (robot) ->
             }
           ]
         }
-        robot.emit 'slack.attachment', msgData
+
+        #robot.emit 'slack.attachment', msgData
+        Helpers.sendCustomMessage(robot,msgData)
 ######################################################################################
   robot.respond /apppulse get errors for (.*)/i, (msg)->
     Helpers.setSharingRoom(robot,msg)
@@ -170,7 +173,8 @@ module.exports = (robot) ->
 
         robot.logger.debug "Constructed message : \n " + JSON.stringify(msgData)
 
-        robot.emit 'slack.attachment', msgData
+        #robot.emit 'slack.attachment', msgData
+        Helpers.sendCustomMessage(robot,msgData)
 ######################################################################################
   robot.respond /apppulse help/i, (res)->
     msgData = {
@@ -197,7 +201,8 @@ module.exports = (robot) ->
       }
     }
 
-    robot.emit 'slack.attachment', msgData
+    #robot.emit 'slack.attachment', msgData
+    Helpers.sendCustomMessage(robot,msgData)
 ######################################################################################
   robot.respond /apppulse set mock data (.*)/i, (msg) ->
     mockDataStatus= msg.match[1]

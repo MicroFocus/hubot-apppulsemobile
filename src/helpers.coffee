@@ -178,3 +178,6 @@ module.exports =
     robot.http("http://localhost:8080/hubot/apppulsemobile/botchannel")
       .header('Content-Type', 'application/json')
       .post(data)
+
+  sendCustomMessage: (robot,data) =>
+    robot.send data,data
