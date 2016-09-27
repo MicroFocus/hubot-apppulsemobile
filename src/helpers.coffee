@@ -179,5 +179,14 @@ module.exports =
       .header('Content-Type', 'application/json')
       .post(data)
 
-  sendCustomMessage: (robot,data) =>
-    robot.send data,data
+  sendCustomMessage: (robot,data,room) =>
+    robot.logger.debug "New code!"
+    roomToSend = undefined
+    if not room
+      roomToSend = data.channel
+    else
+      roomToSend = room
+
+    robot.logger.debug "Sending custom message to #{roomToSend}"
+
+    robot.send {room : roomToSend},data
