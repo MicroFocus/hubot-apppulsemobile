@@ -21,7 +21,11 @@ mockData = require "./mockData"
 module.exports = (robot) ->
   Helpers.setRobot(robot)
 
-  robot.respond /apppulse get apps/i, (msg) ->
+  robot.e.registerIntegration({short_desc: 'AppPulse Mobile hubot chatops integration', name: 'apppulse'})
+
+  #robot.respond /apppulse get apps/i, (msg) ->
+  robot.e.create {verb:'get',entity:'apps',help: 'Browse registered apps on tenant',type:'respond'},(msg)->
+
     Helpers.setSharingRoom(robot,msg)
     robot.http("http://localhost:8080/hubot/apppulsemobile/proxy/getApps")
       .get() (err, res, body) ->
@@ -67,7 +71,12 @@ module.exports = (robot) ->
         #robot.emit 'slack.attachment', msgData
         Helpers.sendCustomMessage(robot,msgData)
 ######################################################################################
-  robot.respond /apppulse get fundex for (.*)/i, (msg)->
+  #robot.respond /apppulse get fundex for (.*)/i, (msg)->
+  robot.e.create {verb:'get',entity:'fundex',
+  regex_suffix:{re: "for (.*)", optional: false},
+  help: 'Show fundex for specified application and platform',type:'respond',
+  example: 'for Advantage Mobile Banking'},(msg)->
+
     Helpers.setSharingRoom(robot,msg)
     applicationName = msg.match[1]
     robot.logger.debug "Showing fundex for application #{applicationName}"
@@ -125,7 +134,12 @@ module.exports = (robot) ->
         #robot.emit 'slack.attachment', msgData
         Helpers.sendCustomMessage(robot,msgData)
 ######################################################################################
-  robot.respond /apppulse get errors for (.*)/i, (msg)->
+  #robot.respond /apppulse get errors for (.*)/i, (msg)->
+  robot.e.create {verb:'get',entity:'errors',
+  regex_suffix:{re: "for (.*)", optional: false},
+  help: 'Show top 5 stability errors for specified application and platform',type:'respond',
+  example: 'for Advantage Mobile Banking'},(msg)->
+
     Helpers.setSharingRoom(robot,msg)
     application = msg.match[1]
 
