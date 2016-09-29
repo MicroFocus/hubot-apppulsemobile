@@ -2,8 +2,10 @@
 
 
 ## Installation
+Install hubot-enteprise script following the  
+[New instance- CLI](https://github.com/eedevops/hubot-enterprise/wiki/bootstrap#new-instance--cli)
 
-In hubot project repo, run:
+In hubot directory, run:
 
 `npm install hubot-apppulsemobile --save`
 
@@ -14,6 +16,8 @@ Then add **hubot-apppulsemobile** to your `external-scripts.json`:
   "hubot-apppulsemobile"
 ]
 ```
+
+Now the AppPulse Mobile integration is integrated in your hubot instance
 
 ## Sample Interaction
 
@@ -30,6 +34,11 @@ Hubot should be run with the following env variables to support this script:
 	TENANT_ID=[apppulse mobile tenant id]
 	CLIENT_SECRET=[apppulse mobile client openapi secret]
 	CLIENT_ID=[apppulse mobile client openapi id]
+
+## Help:
+  You can use the Hubot Enterprise help command by typing:
+  
+    @yourbot help apppulsemobile
 
 ## Availble commands:
 
