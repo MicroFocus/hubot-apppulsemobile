@@ -17,12 +17,13 @@
   },
 
   "dependencies": {
-   "sync-request": "^3.0.0",
+   "sync-request": "^3.0.1",
    "querystring":"^0.2.0"
   },
 
   "peerDependencies": {
-    "hubot": "2.x"
+    "hubot": "2.x",
+    "hubot-enterprise": "github:eedevops/hubot-enterprise"
   },
 
   "devDependencies": {
