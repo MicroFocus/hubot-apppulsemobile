@@ -13,6 +13,16 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and limitations under the License.
 ###
 
+# Configuration:
+#   HUBOT_SLACK_TOKEN "" Slack token for hubot
+#   DEFAULT_SHARE_ROOM "" Default share room for apppulse mobile notifications
+#   https_proxy "" Proxy used for hubot
+#   SAAS_PREFIX "https://apppulse-mobile.saas.hpe.com/mobile/openapi/rest" SaaS rest api url
+#   SAAS_URL "https://apppulse-mobile.saas.hpe.com/" SaaS portal url
+#   TENANT_ID "" Tenant id
+#   CLIENT_ID "" Tenant client id
+#   CLIENT_SECRET "" Client secret
+#
 
 Helpers = require './helpers'
 AppPulseApi = require "./libs/appPulseMobileApiAdapter.js"
@@ -23,7 +33,6 @@ module.exports = (robot) ->
 
   robot.e.registerIntegration({short_desc: 'AppPulse Mobile hubot chatops integration', name: 'apppulse'})
 
-  #robot.respond /apppulse get apps/i, (msg) ->
   robot.e.create {verb:'get',entity:'apps',help: 'Browse registered apps on tenant',type:'respond'},(msg)->
 
     Helpers.setSharingRoom(robot,msg)
@@ -71,7 +80,6 @@ module.exports = (robot) ->
         #robot.emit 'slack.attachment', msgData
         Helpers.sendCustomMessage(robot,msgData)
 ######################################################################################
-  #robot.respond /apppulse get fundex for (.*)/i, (msg)->
   robot.e.create {verb:'get',entity:'fundex',
   regex_suffix:{re: "for (.*)", optional: false},
   help: 'Show fundex for specified application and platform',type:'respond',
@@ -134,7 +142,6 @@ module.exports = (robot) ->
         #robot.emit 'slack.attachment', msgData
         Helpers.sendCustomMessage(robot,msgData)
 ######################################################################################
-  #robot.respond /apppulse get errors for (.*)/i, (msg)->
   robot.e.create {verb:'get',entity:'errors',
   regex_suffix:{re: "for (.*)", optional: false},
   help: 'Show top 5 stability errors for specified application and platform',type:'respond',
